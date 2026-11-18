@@ -1,0 +1,1090 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>LALY™ — The Art of Being Her</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600;700&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+<style>
+:root {
+  --wine: #480c1b;
+  --red: #811c32;
+  --cherry: #b33a50;
+  --pink: #e8b9bd;
+  --cream: #f8f1e9;
+  --white: #fffaf5;
+  --ink: #29191b;
+  --gold: #b99b72;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: var(--cream);
+  color: var(--ink);
+  font-family: 'DM Sans', sans-serif;
+  overflow-x: hidden;
+}
+
+button {
+  font-family: inherit;
+  cursor: pointer;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+::selection {
+  background: var(--cherry);
+  color: white;
+}
+
+/* LOADING */
+
+.loader {
+  position: fixed;
+  inset: 0;
+  background: var(--wine);
+  color: var(--cream);
+  z-index: 9999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  animation: loaderOut 1s ease 1.8s forwards;
+}
+
+.loader h1 {
+  font: 300 55px 'Cormorant Garamond';
+  letter-spacing: 12px;
+}
+
+.loader p {
+  font-size: 9px;
+  letter-spacing: 5px;
+  margin-top: 15px;
+}
+
+@keyframes loaderOut {
+  to {
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+  }
+}
+
+/* HEADER */
+
+header {
+  height: 82px;
+  padding: 0 7%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: var(--cream);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  border-bottom: 1px solid #e7d8d0;
+}
+
+.logo {
+  font: 600 29px 'Cormorant Garamond';
+  letter-spacing: 7px;
+  color: var(--wine);
+}
+
+.logo span {
+  font-size: 10px;
+  vertical-align: top;
+  letter-spacing: 0;
+}
+
+nav {
+  display: flex;
+  gap: 34px;
+}
+
+nav a {
+  font-size: 10px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  position: relative;
+}
+
+nav a::after {
+  content: "";
+  position: absolute;
+  width: 0;
+  height: 1px;
+  background: var(--red);
+  bottom: -5px;
+  left: 0;
+  transition: .3s;
+}
+
+nav a:hover::after {
+  width: 100%;
+}
+
+.menu-btn {
+  display: none;
+  border: 0;
+  background: none;
+  font-size: 24px;
+  color: var(--wine);
+}
+
+/* HERO */
+
+.hero {
+  min-height: 680px;
+  height: calc(100vh - 82px);
+  max-height: 850px;
+  background:
+    linear-gradient(90deg, rgba(38,5,15,.82), rgba(50,8,19,.2)),
+    url('https://www.image2url.com/r2/default/images/1794971608628-912a1898-afd4-46d9-bad8-770b210b1079.png') center 45%/cover;
+  display: flex;
+  align-items: center;
+  padding: 8%;
+  color: white;
+  position: relative;
+}
+
+.hero::after {
+  content: "EST. IN LOVE";
+  position: absolute;
+  right: 7%;
+  bottom: 40px;
+  font-size: 9px;
+  letter-spacing: 5px;
+}
+
+.hero-content {
+  max-width: 570px;
+  animation: appear 1.3s ease;
+}
+
+.eyebrow {
+  font-size: 10px;
+  letter-spacing: 5px;
+  text-transform: uppercase;
+  margin-bottom: 25px;
+}
+
+.hero h1 {
+  font: 300 clamp(65px, 11vw, 125px)/.83 'Cormorant Garamond';
+  letter-spacing: -4px;
+}
+
+.hero h1 em {
+  color: var(--pink);
+  font-weight: 300;
+}
+
+.hero-description {
+  font: 300 16px/1.8 'Cormorant Garamond';
+  margin-top: 30px;
+  max-width: 360px;
+}
+
+.hero-btn {
+  display: inline-block;
+  margin-top: 36px;
+  padding: 17px 32px;
+  background: var(--cream);
+  color: var(--wine);
+  font-size: 9px;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  transition: .3s;
+}
+
+.hero-btn:hover {
+  background: var(--pink);
+  transform: translateY(-4px);
+}
+
+.hero-number {
+  position: absolute;
+  right: 8%;
+  top: 50%;
+  transform: translateY(-50%);
+  font: 300 15px 'Cormorant Garamond';
+  writing-mode: vertical-rl;
+  letter-spacing: 5px;
+}
+
+/* INTRO */
+
+.intro {
+  padding: 115px 8%;
+  text-align: center;
+}
+
+.section-label {
+  color: var(--cherry);
+  letter-spacing: 4px;
+  font-size: 9px;
+  text-transform: uppercase;
+}
+
+.intro h2 {
+  font: 300 clamp(35px, 6vw, 65px)/1.1 'Cormorant Garamond';
+  margin: 25px auto;
+  max-width: 800px;
+}
+
+.intro h2 em {
+  color: var(--cherry);
+}
+
+.intro p {
+  color: #806d69;
+  font: 300 17px/1.8 'Cormorant Garamond';
+  max-width: 470px;
+  margin: auto;
+}
+
+/* COLLECTION */
+
+.collection {
+  background: #eee1d7;
+  padding: 100px 7%;
+}
+
+.section-heading {
+  display: flex;
+  justify-content: space-between;
+  align-items: end;
+  margin-bottom: 55px;
+  gap: 20px;
+}
+
+.section-heading h2 {
+  font: 300 clamp(45px, 6vw, 72px) 'Cormorant Garamond';
+  color: var(--wine);
+}
+
+.section-heading p {
+  font-size: 9px;
+  letter-spacing: 2px;
+  color: #806d69;
+}
+
+.products {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+}
+
+.product {
+  cursor: pointer;
+  min-width: 0;
+}
+
+.product-image {
+  height: 430px;
+  overflow: hidden;
+  position: relative;
+  background: #d7b9b4;
+}
+
+.product-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform .8s;
+}
+
+.product:hover img {
+  transform: scale(1.07);
+}
+
+.product-tag {
+  position: absolute;
+  top: 17px;
+  left: 17px;
+  background: var(--cream);
+  padding: 9px 12px;
+  font-size: 8px;
+  letter-spacing: 2px;
+}
+
+.product-info {
+  padding: 20px 3px;
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+}
+
+.product-info h3 {
+  font: 500 27px 'Cormorant Garamond';
+  color: var(--wine);
+}
+
+.product-info p {
+  font-size: 9px;
+  letter-spacing: 1px;
+  color: #907b76;
+  margin-top: 6px;
+}
+
+.product-info span {
+  font: italic 15px 'Cormorant Garamond';
+  color: var(--red);
+  white-space: nowrap;
+}
+
+/* CAMPAIGN */
+
+.campaign {
+  min-height: 600px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  background: var(--wine);
+  color: var(--cream);
+}
+
+.campaign-image {
+  min-height: 600px;
+  background:
+    url('https://www.image2url.com/r2/default/images/1794972295980-9260a484-e2de-4e9b-b681-3fdd1e06a584.png') center/cover;
+}
+
+.campaign-text {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 12%;
+}
+
+.campaign-text .section-label {
+  color: var(--pink);
+}
+
+.campaign-text h2 {
+  font: 300 clamp(45px, 6vw, 75px)/.95 'Cormorant Garamond';
+  margin: 30px 0;
+}
+
+.campaign-text h2 em {
+  color: var(--pink);
+}
+
+.campaign-text p {
+  font: 300 17px/1.8 'Cormorant Garamond';
+  color: #e4cdd0;
+}
+
+.campaign-text button {
+  width: fit-content;
+  background: none;
+  border: 1px solid #b98b91;
+  color: white;
+  padding: 15px 25px;
+  margin-top: 35px;
+  font-size: 9px;
+  letter-spacing: 3px;
+  transition: .3s;
+}
+
+.campaign-text button:hover {
+  background: var(--cream);
+  color: var(--wine);
+}
+
+/* GALLERY */
+
+.gallery {
+  padding: 110px 7%;
+}
+
+.gallery-title {
+  text-align: center;
+  margin-bottom: 55px;
+}
+
+.gallery-title h2 {
+  font: 300 clamp(45px, 7vw, 75px) 'Cormorant Garamond';
+  margin-top: 15px;
+}
+
+.gallery-grid {
+  display: grid;
+  grid-template-columns: 1.1fr .9fr 1fr;
+  gap: 18px;
+  align-items: center;
+}
+
+.gallery-grid img {
+  width: 100%;
+  height: 420px;
+  object-fit: cover;
+  transition: .6s;
+  cursor: pointer;
+}
+
+.gallery-grid img:nth-child(2) {
+  height: 500px;
+}
+
+.gallery-grid img:hover {
+  filter: saturate(1.3);
+  transform: translateY(-8px);
+}
+
+/* SECRET */
+
+.secret {
+  background: #e5c5c3;
+  padding: 110px 8%;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.secret::before,
+.secret::after {
+  content: "✿";
+  position: absolute;
+  font-size: 100px;
+  color: rgba(129,28,50,.1);
+}
+
+.secret::before {
+  left: 5%;
+  top: 10%;
+}
+
+.secret::after {
+  right: 5%;
+  bottom: 10%;
+}
+
+.secret h2 {
+  font: 300 clamp(48px, 8vw, 85px) 'Cormorant Garamond';
+  color: var(--wine);
+  margin: 25px 0;
+}
+
+.secret p {
+  font: 300 18px/1.8 'Cormorant Garamond';
+  max-width: 450px;
+  margin: auto;
+  color: #70434a;
+}
+
+.secret button {
+  background: var(--wine);
+  color: white;
+  border: none;
+  padding: 17px 35px;
+  margin-top: 35px;
+  letter-spacing: 3px;
+  font-size: 9px;
+  transition: .3s;
+}
+
+.secret button:hover {
+  background: var(--cherry);
+  transform: scale(1.04);
+}
+
+/* FOOTER */
+
+footer {
+  padding: 65px 8% 35px;
+  background: #260811;
+  color: var(--cream);
+  text-align: center;
+}
+
+.footer-logo {
+  font: 300 60px 'Cormorant Garamond';
+  letter-spacing: 12px;
+}
+
+footer p {
+  color: #c5a4a6;
+  font: 300 15px 'Cormorant Garamond';
+  margin-top: 15px;
+}
+
+.footer-bottom {
+  border-top: 1px solid #56313b;
+  padding-top: 25px;
+  margin-top: 45px;
+  font-size: 8px;
+  letter-spacing: 3px;
+  color: #b18b91;
+}
+
+/* MODAL */
+
+.modal {
+  position: fixed;
+  inset: 0;
+  background: rgba(25,5,12,.82);
+  backdrop-filter: blur(8px);
+  z-index: 500;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+}
+
+.modal.active {
+  display: flex;
+  animation: appear .3s;
+}
+
+.modal-content {
+  max-width: 460px;
+  width: 100%;
+  background: var(--cream);
+  padding: 50px 35px;
+  text-align: center;
+  position: relative;
+  animation: rise .5s;
+}
+
+.modal-content h2 {
+  font: 300 47px 'Cormorant Garamond';
+  color: var(--wine);
+  margin: 20px 0;
+}
+
+.modal-content p {
+  font: 300 17px/1.8 'Cormorant Garamond';
+  color: #806d69;
+}
+
+.close {
+  position: absolute;
+  right: 20px;
+  top: 15px;
+  font-size: 24px;
+  background: none;
+  border: none;
+  color: var(--wine);
+}
+
+.modal-symbol {
+  font-size: 35px;
+  color: var(--cherry);
+}
+
+/* ANIMATIONS */
+
+@keyframes appear {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes rise {
+  from { opacity: 0; transform: translateY(30px) scale(.97); }
+  to { opacity: 1; transform: translateY(0) scale(1); }
+}
+
+.reveal {
+  opacity: 0;
+  transform: translateY(35px);
+  transition: 1s ease;
+}
+
+.reveal.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* HEART PARTICLES */
+
+.heart {
+  position: fixed;
+  pointer-events: none;
+  color: var(--cherry);
+  animation: floatHeart 1.5s forwards;
+  z-index: 999;
+}
+
+@keyframes floatHeart {
+  to {
+    transform: translateY(-100px) rotate(30deg);
+    opacity: 0;
+  }
+}
+
+/* RESPONSIVE */
+
+@media(max-width: 800px) {
+  header {
+    height: 70px;
+    padding: 0 6%;
+  }
+
+  .menu-btn {
+    display: block;
+  }
+
+  nav {
+    display: none;
+    position: absolute;
+    top: 70px;
+    left: 0;
+    right: 0;
+    background: var(--cream);
+    padding: 30px;
+    flex-direction: column;
+    gap: 25px;
+    border-bottom: 1px solid #e7d8d0;
+  }
+
+  nav.open {
+    display: flex;
+  }
+
+  .hero {
+    min-height: 680px;
+    height: 85vh;
+    background-position: 60% center;
+  }
+
+  .hero-number {
+    display: none;
+  }
+
+  .products {
+    grid-template-columns: 1fr 1fr;
+    gap: 15px;
+  }
+
+  .product-image {
+    height: 300px;
+  }
+
+  .campaign {
+    grid-template-columns: 1fr;
+  }
+
+  .campaign-image {
+    min-height: 450px;
+  }
+
+  .campaign-text {
+    padding: 65px 9%;
+  }
+
+  .gallery-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .gallery-grid img,
+  .gallery-grid img:nth-child(2) {
+    height: 320px;
+  }
+
+  .gallery-grid img:last-child {
+    display: none;
+  }
+}
+
+@media(max-width: 480px) {
+  .hero h1 {
+    font-size: 76px;
+  }
+
+  .products {
+    grid-template-columns: 1fr;
+  }
+
+  .product-image {
+    height: 390px;
+  }
+
+  .section-heading {
+    align-items: start;
+    flex-direction: column;
+  }
+
+  .gallery-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .gallery-grid img,
+  .gallery-grid img:nth-child(2) {
+    height: 390px;
+  }
+
+  .gallery-grid img:last-child {
+    display: block;
+  }
+
+  .intro {
+    padding: 85px 7%;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<!-- ABERTURA -->
+<div class="loader">
+  <h1>LALY™</h1>
+  <p>THE ART OF BEING HER</p>
+</div>
+
+<!-- MENU -->
+<header>
+  <a href="#" class="logo">LALY<span>™</span></a>
+
+  <nav id="navigation">
+    <a href="#about">The brand</a>
+    <a href="#collection">Collection</a>
+    <a href="#campaign">Campaign</a>
+    <a href="#gallery">Gallery</a>
+    <a href="#secret">For you</a>
+  </nav>
+
+  <button class="menu-btn" onclick="toggleMenu()">☰</button>
+</header>
+
+<!-- CAPA -->
+<section class="hero">
+  <div class="hero-content">
+    <p class="eyebrow">A special edition · Nº 001</p>
+
+    <h1>The art<br>of being<br><em>Laly.</em></h1>
+
+    <p class="hero-description">
+      Some things are too beautiful to be described.
+      Some people are simply impossible to recreate.
+    </p>
+
+    <a href="#collection" class="hero-btn">Explore the collection ↗</a>
+  </div>
+
+  <div class="hero-number">THE LALY COLLECTION — 2026</div>
+</section>
+
+<!-- INTRODUÇÃO -->
+<section class="intro reveal" id="about">
+  <span class="section-label">The philosophy</span>
+
+  <h2>
+    Beauty is not something you wear.
+    <em>It's something you are.</em>
+  </h2>
+
+  <p>
+    Criada para celebrar uma garota que não precisa
+    de apresentações. Uma personalidade única,
+    uma beleza extraordinária e uma presença
+    impossível de ignorar.
+  </p>
+</section>
+
+<!-- PRODUTOS -->
+<section class="collection" id="collection">
+
+  <div class="section-heading reveal">
+    <div>
+      <span class="section-label">Exclusive creations</span>
+      <h2>The collection.</h2>
+    </div>
+
+    <p>THREE PIECES. ONE MUSE.</p>
+  </div>
+
+  <div class="products">
+
+    <article class="product reveal" onclick="openProduct(0)">
+      <div class="product-image">
+        <img src="https://www.image2url.com/r2/default/images/1794971724575-4bb27d1e-8cf8-49e0-a54a-4fcaec56e38f.png"
+        alt="Perfume">
+        <span class="product-tag">01 — SIGNATURE</span>
+      </div>
+
+      <div class="product-info">
+        <div>
+          <h3>Essence of Laly</h3>
+          <p>A fragrance like no other.</p>
+        </div>
+        <span>01</span>
+      </div>
+    </article>
+
+    <article class="product reveal" onclick="openProduct(1)">
+      <div class="product-image">
+        <img src="https://www.image2url.com/r2/default/images/1794971745273-0fbca659-6651-4f1b-bb19-80db8e52c0a4.png"
+        alt="Batom">
+        <span class="product-tag">02 — RED EDITION</span>
+      </div>
+
+      <div class="product-info">
+        <div>
+          <h3>Perfect Red</h3>
+          <p>A shade made for her.</p>
+        </div>
+        <span>02</span>
+      </div>
+    </article>
+
+    <article class="product reveal" onclick="openProduct(2)">
+      <div class="product-image">
+        <img src="https://www.image2url.com/r2/default/images/1794971765187-58caacd4-31d6-4978-89d8-f5c1ef635950.png"
+        alt="Coleção de beleza">
+        <span class="product-tag">03 — EXCLUSIVE</span>
+      </div>
+
+      <div class="product-info">
+        <div>
+          <h3>Golden Hour</h3>
+          <p>Made of little moments.</p>
+        </div>
+        <span>03</span>
+      </div>
+    </article>
+
+  </div>
+</section>
+
+<!-- CAMPANHA -->
+<section class="campaign" id="campaign">
+
+  <div class="campaign-image"></div>
+
+  <div class="campaign-text reveal">
+    <span class="section-label">The 2026 campaign</span>
+
+    <h2>Not made<br>to be <em>ordinary.</em></h2>
+
+    <p>
+      There are beautiful things everywhere.
+      But there is only one Laly.
+      And that's the whole point.
+    </p>
+
+    <button onclick="openModal('campaign')">
+      DISCOVER THE STORY ↗
+    </button>
+  </div>
+
+</section>
+
+<!-- GALERIA -->
+<section class="gallery" id="gallery">
+
+  <div class="gallery-title reveal">
+    <span class="section-label">Visual diary</span>
+    <h2>A study of beauty.</h2>
+  </div>
+
+  <div class="gallery-grid">
+    <img class="reveal"
+    src="https://www.image2url.com/r2/default/images/1794971785111-c1ab91b7-f85f-4e47-b910-3cd3b7c163d6.png"
+    alt="Editorial de moda"
+    onclick="openModal('gallery')">
+
+    <img class="reveal"
+    src="https://www.image2url.com/r2/default/images/1794971824843-503a49e8-5a99-48e3-95a2-c10624343f8a.png"
+    alt="Retrato editorial"
+    onclick="openModal('gallery')">
+
+    <img class="reveal"
+    src="https://www.image2url.com/r2/default/images/1794971608628-912a1898-afd4-46d9-bad8-770b210b1079.png"
+    alt="Retrato de beleza"
+    onclick="openModal('gallery')">
+  </div>
+
+</section>
+
+<!-- SURPRESA -->
+<section class="secret" id="secret">
+  <span class="section-label">A little something</span>
+
+  <h2>For the girl<br>behind it all.</h2>
+
+  <p>
+    Nem todas as coisas bonitas podem ser colocadas
+    em uma coleção. Algumas simplesmente merecem
+    ser admiradas.
+  </p>
+
+  <button onclick="openModal('secret')">
+    OPEN YOUR GIFT ♡
+  </button>
+</section>
+
+<!-- RODAPÉ -->
+<footer>
+  <div class="footer-logo">LALY™</div>
+
+  <p>The art of being yourself.</p>
+
+  <div class="footer-bottom">
+    AN ORIGINAL CREATION · MADE WITH LOVE · 2026
+    <br><br>
+    NO ONE DOES IT LIKE YOU.
+  </div>
+</footer>
+
+<!-- JANELA INTERATIVA -->
+<div class="modal" id="modal" onclick="closeOutside(event)">
+  <div class="modal-content">
+
+    <button class="close" onclick="closeModal()">×</button>
+
+    <div class="modal-symbol">✿</div>
+
+    <span class="section-label" id="modal-label">
+      A SPECIAL MESSAGE
+    </span>
+
+    <h2 id="modal-title">For you.</h2>
+
+    <p id="modal-text"></p>
+
+  </div>
+</div>
+
+<script>
+
+// MENU MOBILE
+function toggleMenu() {
+  document.getElementById('navigation').classList.toggle('open');
+}
+
+document.querySelectorAll('nav a').forEach(link => {
+  link.addEventListener('click', () => {
+    document.getElementById('navigation').classList.remove('open');
+  });
+});
+
+// PRODUTOS
+const products = [
+  {
+    label: "01 — THE SIGNATURE",
+    title: "Essence of Laly",
+    text: "Uma fragrância que não poderia ser reproduzida. Doce, marcante e impossível de esquecer. Assim como a pessoa que inspirou sua criação."
+  },
+  {
+    label: "02 — THE RED EDITION",
+    title: "Perfect Red",
+    text: "Um vermelho escolhido especialmente para ela. Porque algumas cores simplesmente encontram a pessoa certa."
+  },
+  {
+    label: "03 — THE GOLDEN HOUR",
+    title: "Golden Hour",
+    text: "Uma coleção inspirada na beleza dos pequenos momentos. Porque até as coisas mais simples ficam especiais quando envolvem você."
+  }
+];
+
+// MODAIS
+function openProduct(index) {
+  const item = products[index];
+
+  document.getElementById('modal-label').textContent = item.label;
+  document.getElementById('modal-title').textContent = item.title;
+  document.getElementById('modal-text').textContent = item.text;
+
+  document.getElementById('modal').classList.add('active');
+}
+
+function openModal(type) {
+  const label = document.getElementById('modal-label');
+  const title = document.getElementById('modal-title');
+  const text = document.getElementById('modal-text');
+
+  if (type === 'secret') {
+    label.textContent = "AN EXCLUSIVE LETTER";
+    title.textContent = "Dear Laly.";
+
+    text.textContent =
+      "Se esse site fosse uma marca de verdade, você seria sua única inspiração. Cada detalhe foi pensado em você, porque não existe nada mais especial do que poder celebrar a pessoa que você é. Eu poderia criar mil coleções, mil campanhas e mil versões desse site, mas nenhuma conseguiria explicar completamente o quanto você é especial para mim. Com amor, de alguém que é completamente encantado por você. ♡";
+
+  } else if (type === 'campaign') {
+    label.textContent = "THE STORY";
+    title.textContent = "One of a kind.";
+
+    text.textContent =
+      "Toda grande criação começa com uma inspiração. Essa começou com uma garota de cabelo vermelho, personalidade única e uma beleza que merece sua própria campanha. Laly, essa marca inteira existe por sua causa.";
+
+  } else {
+    label.textContent = "VISUAL DIARY";
+    title.textContent = "A little reminder.";
+
+    text.textContent =
+      "A beleza tem muitas formas, mas algumas pessoas conseguem transformar até um simples olhar em uma obra de arte.";
+  }
+
+  document.getElementById('modal').classList.add('active');
+}
+
+function closeModal() {
+  document.getElementById('modal').classList.remove('active');
+}
+
+function closeOutside(event) {
+  if (event.target.id === 'modal') {
+    closeModal();
+  }
+}
+
+// ANIMAÇÕES AO ROLAR
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add('visible');
+      observer.unobserve(entry.target);
+    }
+  });
+}, {
+  threshold: 0.12
+});
+
+document.querySelectorAll('.reveal').forEach(element => {
+  observer.observe(element);
+});
+
+// PEQUENOS CORAÇÕES AO CLICAR
+document.addEventListener('click', (event) => {
+  if (event.target.closest('button, a, .product, .gallery-grid img')) {
+    const heart = document.createElement('span');
+
+    heart.className = 'heart';
+    heart.textContent = '♥';
+    heart.style.left = event.clientX + 'px';
+    heart.style.top = event.clientY + 'px';
+    heart.style.fontSize = (12 + Math.random() * 12) + 'px';
+
+    document.body.appendChild(heart);
+
+    setTimeout(() => heart.remove(), 1500);
+  }
+});
+
+// FECHAR MODAL COM ESC
+document.addEventListener('keydown', (event) => {
+  if (event.key === 'Escape') closeModal();
+});
+
+</script>
+
+</body>
+</html>
